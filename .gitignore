@@ -1,0 +1,129 @@
+# Python related
+*.py[cod]
+*.py[cod].*
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info
+.eggs
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.VENV/
+env.bak/
+venv.bak/
+
+# Django related
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+
+# Migrations
+customer/migrations/
+
+# Media and static files
+documents/
+media/
+staticfiles/
+static/
+*.mp4
+*.avi
+*.mkv
+*.flv
+*.mov
+*.mp3
+*.wav
+*.flac
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.cert
+*.json
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Coveralls
+.coverage.*
+
+# Other
+docs/_build/
+*.mo
+*.pkl
+*.pyo
+*.tox
+.tox/
+*.log
+*.pot
+*.mo
+
+# 
+test.py
+image.png
