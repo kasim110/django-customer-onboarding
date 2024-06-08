@@ -6,29 +6,22 @@ This project demonstrates how to integrate AWS Textract for document text extrac
 
 ### Document Upload and Extraction
 
-#### Upload Document
-- **Endpoint:** `POST /customer/upload-document/`
-- **Description:** Upload a document and extract text using AWS Textract.
+### User Authentication Endpoints
+- **Endpoint:** `POST /customer/user-login/`
+- **Description:** Log in an existing user and retrieve an authentication token.
 - **Request Body:**
-    - `attached_file` (file): The document to be uploaded.
-    - `customer` (integer): The ID of the customer associated with the document.
-- **Example Request (cURL):**
-    ```bash
-    curl -X POST http://127.0.0.1:8000/customer/upload-document/ \
-    -H "Content-Type: multipart/form-data" \
-    -F "attached_file=@/path/to/your/document.pdf" \
-    -F "customer=1"
-    ```
-- **Response:** Returns details of the uploaded document and extracted text data.
+    - `username` :"existing_user"
+    - `password`: "password123"
+- **Response:** Returns an authentication token for the logged-in user.
 
-#### Retrieve Document Details
-- **Endpoint:** `GET /customer/document/<int:pk>/`
-- **Description:** Retrieve details of a specific document, including extracted text data.
-- **Example Request (cURL):**
-    ```bash
-    curl -X GET http://127.0.0.1:8000/customer/document/1/
-    ```
-- **Response:** Returns details of the specified document, including extracted text data.
+#### Customer Creation Endpoint
+- **Endpoint:** `POST /customer/create-customer/`
+- **Description:** Upload a document (front and back sides if applicable) and extract text using AWS Textract. Creates a customer and customer document record based on the extracted data.
+- **Request Body:**
+    - `Authorization`: Token `<your_token>`
+    - `attached_file` (file): The document to be uploaded.
+
+- **Response:**  Returns details of the created customer and associated document.
 
 ## Project Structure
 
@@ -37,6 +30,7 @@ This project demonstrates how to integrate AWS Textract for document text extrac
     - `serializers.py`: Defines serializers for the models.
     - `views.py`: Defines views to handle document upload and retrieval.
     - `urls.py`: Maps URLs to the views.
+    - `utils.py`: Contains utility functions for data extraction from documents.
 - `customer_onboarding/settings.py`: Django project settings, including AWS credentials configuration.
 
 ## Running the Project
